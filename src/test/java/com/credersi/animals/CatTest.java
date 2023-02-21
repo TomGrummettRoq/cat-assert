@@ -51,5 +51,15 @@ public class CatTest {
 		assertEquals(cat.howHungry(), 0);
 	}
 	
+	@Test
+	public void testResurrection() {
+		Cat cat = new Cat(); {
+			cat.runs();
+			cat.runs();
+			cat.feeds();
+		};
+		assertEquals(cat.howHungry(), 90);
+		assertTrue(!cat.isAlive());
+	}
 }
 
